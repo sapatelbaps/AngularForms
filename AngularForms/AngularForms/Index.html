@@ -4,6 +4,7 @@
     <title>Pluralsight - AngularJS Forms Using Bootstrap and MVC 5</title>
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/angular-route.min.js"></script>
     <script src="app/AngularFormsApp.js"></script>
     <script src="app/EmployeeForm/efController.js"></script>
     <script src="app/EmployeeForm/efDirective.js"></script>
@@ -11,7 +12,8 @@
     <meta charset="utf-8" />
 </head>
 <body ng-controller="efController" class="container">
-    <br />
-    <employee-form />
+    <h1>Start here</h1>
+    <div ng-view>
+    </div>
 </body>
 </html>
