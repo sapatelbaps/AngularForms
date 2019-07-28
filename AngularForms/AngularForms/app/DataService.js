@@ -19,7 +19,7 @@
             return true;
         }
 
-        var updateEmployee = function (newEmployee) {
+        var updateEmployee = function (employee) {
             return true;
         }
 
@@ -27,5 +27,5 @@
             insertEmployee: insertEmployee,
             updateEmployee: updateEmployee,
             getEmployee: getEmployee
-        }
+        };
     });
