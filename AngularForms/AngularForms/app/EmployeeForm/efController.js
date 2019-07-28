@@ -1,18 +1,23 @@
-﻿angularFormsApp.controller('efController',
-    function efController($scope, efService) {
-        $scope.employee = efService.employee;
+﻿
+angularFormsApp.controller('efController',
+    function efController($scope, $window, DataService) {
+
+        $scope.employee = DataService.employee;
 
         $scope.departments = [
             "Engineering",
             "Marketing",
             "Finance",
             "Administration",
-            "Computer"];
+            "Computer"
+        ];
 
         $scope.submitForm = function () {
-            // If you put a breakpoint then this function will be called from the html component when submitted from the html tag at top or input tag at bottom.
             debugger;
+        };
 
-        }
-    }
-);
+        $scope.cancelForm = function () {
+            debugger;
+        };
+
+    });

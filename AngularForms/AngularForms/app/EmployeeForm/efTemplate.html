@@ -1,10 +1,12 @@
-﻿<form class="form-horizontal" role="form" ng-submit="submitForm()">
+﻿<form class="form-horizontal" role="form">
+
     <fieldset>
         <legend>Basic Information</legend>
         <div class="form-group">
             <label for="fullName" class="col-sm-3 control-label">Name</label>
             <div class="col-sm-9">
-                <input type="text" id="fullName" name="fullName" class="form-control" ng-model="employee.fullName" />
+                <input type="text" id="fullName" name="fullName" class="form-control"
+                       ng-model="employee.fullName" />
             </div>
         </div>
 
@@ -19,7 +21,9 @@
         <div class="form-group">
             <label for="department" class="col-sm-3 control-label">Department</label>
             <div class="col-sm-9">
-                <select name="department" id="department" class="form-control" ng-model="employee.department" ng-options="dept for dept in departments"></select>
+                <select name="department" id="department" class="form-control"
+                        ng-model="employee.department"
+                        ng-options="dept for dept in departments"></select>
             </div>
         </div>
     </fieldset>
@@ -33,17 +37,27 @@
             <div class="col-sm-9">
 
                 <div class="checkbox">
-                    <label><input type="checkbox" value="perkCar" ng-model="employee.perkCar" />Company Car</label>
+                    <label>
+                        <input type="checkbox" value="perkCar"
+                               ng-model="employee.perkCar" />Company Car
+                    </label>
                 </div>
                 <div class="checkbox">
-                    <label><input type="checkbox" value="perkStock" ng-model="employee.perkStock" />Stock Options</label>
+                    <label>
+                        <input type="checkbox" value="perkStock"
+                               ng-model="employee.perkStock" />Stock Options
+                    </label>
                 </div>
                 <div class="checkbox">
-                    <label><input type="checkbox" value="perkSixWeeks" ng-model="employee.perkSixWeeks" />Six Weeks Vacation</label>
+                    <label>
+                        <input type="checkbox" value="perkSixWeeks"
+                               ng-model="employee.perkSixWeeks" />Six Weeks Vacation
+                    </label>
                 </div>
             </div>
         </div>
     </fieldset>
+    <br />
 
     <fieldset>
         <legend>Payroll Type</legend>
@@ -53,23 +67,34 @@
             <div class="col-sm-9">
 
                 <div class="radio">
-                    <label><input type="radio" name="payrollType" value="w2" ng-model="employee.payrollType" /> W-2</label><br />
+                    <label>
+                        <input type="radio" name="payrollType" value="w2"
+                               ng-model="employee.payrollType" /> W-2
+                    </label><br />
                 </div>
                 <div class="radio">
-                    <label><input type="radio" name="payrollType" value="ten99" ng-model="employee.payrollType" /> 1099</label><br />
+                    <label>
+                        <input type="radio" name="payrollType" value="ten99"
+                               ng-model="employee.payrollType" /> 1099
+                    </label><br />
                 </div>
                 <div class="radio">
-                    <label><input type="radio" name="payrollType" value="none" ng-model="employee.payrollType" /> None</label><br />
+                    <label>
+                        <input type="radio" name="payrollType" value="none"
+                               ng-model="employee.payrollType" /> None
+                    </label><br />
                 </div>
                 <br />
-
 
             </div>
         </div>
     </fieldset>
 
     <div class="col-sm-offset-3 col-sm-9">
+        <input type="button" class="btn btn-default" value="Cancel"
+               ng-click="cancelForm()" />
         <input type="submit" class="btn btn-primary" value="Submit"
                ng-click="submitForm()" />
     </div>
+
 </form>
