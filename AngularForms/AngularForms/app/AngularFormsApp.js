@@ -21,7 +21,7 @@ angularFormsApp.config(function ($routeProvider) {
 });
 
 angularFormsApp.controller("HomeController",
-    function ($scope, $location, DataService) {
+    function ($scope, $location, dataService) {
 
         $scope.showCreateEmployeeForm = function () {
             $location.path('/newEmployeeForm');

@@ -3,6 +3,7 @@
         var getEmployee = function (id) {
             if (id === 123) {
                 return {
+                    id: 123,
                     fullName: "Sandip Patel",
                     notes: "Self employed.",
                     department: "Computer",
@@ -17,11 +18,11 @@
 
         var insertEmployee = function (newEmployee) {
             return true;
-        }
+        };
 
         var updateEmployee = function (employee) {
             return true;
-        }
+        };
 
         return {
             insertEmployee: insertEmployee,
