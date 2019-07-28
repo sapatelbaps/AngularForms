@@ -11,6 +11,10 @@ angularFormsApp.config(function ($routeProvider) {
             templateUrl: "app/EmployeeForm/efTemplate.html",
             controller: "efController"
         })
+        .when("/updateEmployeeForm/:id", {
+            templateUrl: "app/EmployeeForm/efTemplate.html",
+            controller: "efController"
+        })
         .otherwise({
             redirectTo: "/home"
         });
@@ -19,8 +23,12 @@ angularFormsApp.config(function ($routeProvider) {
 angularFormsApp.controller("HomeController",
     function ($scope, $location, DataService) {
 
-        $scope.addNewEmployee = function () {
+        $scope.showCreateEmployeeForm = function () {
             $location.path('/newEmployeeForm');
+        };
+
+        $scope.showUpdateEmployeeForm = function (id) {
+            $location.path('/updateEmployeeForm/' + id);
         };
 
     });
