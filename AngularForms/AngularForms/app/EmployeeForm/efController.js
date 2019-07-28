@@ -1,5 +1,5 @@
 ﻿angularFormsApp.controller('efController',
-    function EmployeeFormController($scope, efService) {
+    function efController($scope, efService) {
         $scope.employee = efService.employee;
     }
 );
