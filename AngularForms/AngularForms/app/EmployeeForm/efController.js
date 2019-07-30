@@ -16,6 +16,21 @@ angularFormsApp.controller('efController',
             "Administration"
         ];
 
+        $scope.topcodinglang = [
+            "C#",
+            "C",
+            "C++",
+            "JavaScript",
+            "Java",
+            "NodeJS",
+            "jQuery",
+            "CSS",
+            "HTML",
+            "T-SQL",
+            "PSQL",
+            "NoSQL"
+        ];
+
         $scope.submitForm = function () {
 
             if ($scope.editableEmployee.id == 0) {
