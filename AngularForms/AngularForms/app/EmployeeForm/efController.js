@@ -31,6 +31,11 @@ angularFormsApp.controller('efController',
             "NoSQL"
         ];
 
+        $scope.hoveringOver = function (value) {
+            $scope.overStar = value;
+            $scope.percent = 100 * (value / 10);
+        }
+
         $scope.submitForm = function () {
 
             if ($scope.editableEmployee.id == 0) {
