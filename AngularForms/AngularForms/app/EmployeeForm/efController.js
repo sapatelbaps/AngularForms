@@ -18,7 +18,7 @@ angularFormsApp.controller('efController',
 
         $scope.submitForm = function () {
 
-            if ($scope.editableEmployee.id === 0) {
+            if ($scope.editableEmployee.id == 0) {
                 // insert new employee
                 DataService.insertEmployee($scope.editableEmployee);
             }
