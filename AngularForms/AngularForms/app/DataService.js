@@ -1,12 +1,14 @@
-﻿angularFormsApp.factory('DataService',
+﻿
+angularFormsApp.factory('DataService',
     function () {
         var getEmployee = function (id) {
             if (id === 123) {
                 return {
                     id: 123,
-                    fullName: "Sandip Patel",
-                    notes: "Self employed.",
-                    department: "Computer",
+                    dateHired: "29/07/2019",
+                    fullName: "Milton Waddams",
+                    notes: "The ideal employee.  Just don't touch his red stapler.",
+                    department: "Administration",
                     perkCar: true,
                     perkStock: false,
                     perkSixWeeks: true,

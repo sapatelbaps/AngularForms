@@ -1,5 +1,5 @@
 ﻿
-var angularFormsApp = angular.module('angularFormsApp', ['ngRoute', 'ui.bootstrap']);
+var angularFormsApp = angular.module('angularFormsApp', ["ngRoute", "ui.bootstrap"]);
 
 angularFormsApp.config(function ($routeProvider) {
     $routeProvider
@@ -21,14 +21,10 @@ angularFormsApp.config(function ($routeProvider) {
 });
 
 angularFormsApp.controller("HomeController",
-    function ($scope, $location, $modal, DataService) {
+    function ($scope, $location, DataService) {
 
         $scope.showCreateEmployeeForm = function () {
-            // $location.path('/newEmployeeForm');
-            $modal.open({
-                templateUrl: 'app/EmployeeForm/efTemplate.html',
-                controller: 'efController'
-            });
+            $location.path('/newEmployeeForm');
         };
 
         $scope.showUpdateEmployeeForm = function (id) {

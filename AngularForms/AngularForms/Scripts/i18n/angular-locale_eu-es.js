@@ -16,15 +16,6 @@ $provide.value("$locale", {
       "ostirala",
       "larunbata"
     ],
-    "ERANAMES": [
-      "K.a.",
-      "Kristo ondoren"
-    ],
-    "ERAS": [
-      "K.a.",
-      "K.o."
-    ],
-    "FIRSTDAYOFWEEK": 0,
     "MONTH": [
       "urtarrila",
       "otsaila",
@@ -40,53 +31,35 @@ $provide.value("$locale", {
       "abendua"
     ],
     "SHORTDAY": [
-      "ig.",
-      "al.",
-      "ar.",
-      "az.",
-      "og.",
-      "or.",
-      "lr."
+      "ig",
+      "al",
+      "as",
+      "az",
+      "og",
+      "or",
+      "lr"
     ],
     "SHORTMONTH": [
-      "urt.",
-      "ots.",
-      "mar.",
-      "api.",
-      "mai.",
-      "eka.",
-      "uzt.",
-      "abu.",
-      "ira.",
-      "urr.",
-      "aza.",
-      "abe."
+      "urt",
+      "ots",
+      "mar",
+      "api",
+      "mai",
+      "eka",
+      "uzt",
+      "abu",
+      "ira",
+      "urr",
+      "aza",
+      "abe"
     ],
-    "STANDALONEMONTH": [
-      "urtarrila",
-      "Otsaila",
-      "Martxoa",
-      "Apirila",
-      "Maiatza",
-      "Ekaina",
-      "Uztaila",
-      "Abuztua",
-      "Iraila",
-      "Urria",
-      "Azaroa",
-      "Abendua"
-    ],
-    "WEEKENDRANGE": [
-      5,
-      6
-    ],
-    "fullDate": "y('e')'ko' MMMM d, EEEE",
-    "longDate": "y('e')'ko' MMMM d",
+    "fullDate": "EEEE, y'eko' MMMM'ren' dd'a'",
+    "longDate": "y'eko' MMM'ren' dd'a'",
     "medium": "y MMM d HH:mm:ss",
     "mediumDate": "y MMM d",
     "mediumTime": "HH:mm:ss",
-    "short": "yy/M/d HH:mm",
-    "shortDate": "yy/M/d",
+    "short": "yyyy-MM-dd HH:mm",
+    "shortDate": "yyyy-MM-dd",
     "shortTime": "HH:mm"
   },
   "NUMBER_FORMATS": {
@@ -97,6 +70,7 @@ $provide.value("$locale", {
       {
         "gSize": 3,
         "lgSize": 3,
+        "macFrac": 0,
         "maxFrac": 3,
         "minFrac": 0,
         "minInt": 1,
@@ -108,18 +82,18 @@ $provide.value("$locale", {
       {
         "gSize": 3,
         "lgSize": 3,
+        "macFrac": 0,
         "maxFrac": 2,
         "minFrac": 2,
         "minInt": 1,
-        "negPre": "-",
-        "negSuf": "\u00a0\u00a4",
+        "negPre": "(",
+        "negSuf": "\u00a0\u00a4)",
         "posPre": "",
         "posSuf": "\u00a0\u00a4"
       }
     ]
   },
   "id": "eu-es",
-  "localeID": "eu_ES",
-  "pluralCat": function(n, opt_precision) {  if (n == 1) {    return PLURAL_CATEGORY.ONE;  }  return PLURAL_CATEGORY.OTHER;}
+  "pluralCat": function (n) {  if (n == 1) {   return PLURAL_CATEGORY.ONE;  }  return PLURAL_CATEGORY.OTHER;}
 });
 }]);
