@@ -20,12 +20,12 @@ angularFormsApp.directive('showErrors', function () {
             // on the form controller
             var inputName = inputNgEl.attr('name');
 
-            var helpText = angular.element(el[0].querySelector(".help-block"));
+            // var helpText = angular.element(el[0].querySelector(".help-block"));
 
             // only apply the has-error class after the user leaves the text box
             inputNgEl.bind('blur', function () {
                 el.toggleClass('has-error', formCtrl[inputName].$invalid);
-                helpText.toggleClass('hide', formCtrl[inputName].$valid);
+                // helpText.toggleClass('hide', formCtrl[inputName].$valid);
             });
         }
     }

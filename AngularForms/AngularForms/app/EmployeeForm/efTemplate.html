@@ -7,8 +7,10 @@
             <div class="col-sm-9">
                 <input type="text" id="fullName" name="fullName" class="form-control"
                        ng-model="editableEmployee.fullName" ng-required="true" ng-minlength="3" ng-maxlength="6" ng-pattern="/^A/" />
-                <span class="help-block hide">Full Name is required</span>
-                <span class="help-block hide">Full Name is required</span>
+                <span class="help-block"
+                      ng-if="employeeForm.fullName.$error.required">Full Name is required</span>
+                <span class="help-block"
+                      ng-if="employeeForm.fullName.$error.pattern">Full Name must start with 'A'</span>
 
             </div>
         </div>
