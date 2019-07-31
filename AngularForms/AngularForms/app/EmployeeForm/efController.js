@@ -41,6 +41,12 @@ angularFormsApp.controller('efController',
         }
 
         $scope.submitForm = function () {
+            debugger;
+            // if we allow click of the "submit" button to user then we will perform validation after user clicks the submit button.
+            $scope.$broadcast('show-errors-event');
+
+            // If the form is invalid then we'll just return. It will automatically show all the error messages on UI.
+            if ($scope.employeeForm.$invalid) return;
 
             if ($scope.editableEmployee.id == 0) {
                 // insert new employee
