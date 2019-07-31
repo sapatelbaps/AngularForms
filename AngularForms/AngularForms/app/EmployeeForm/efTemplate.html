@@ -2,7 +2,7 @@
 
     <fieldset>
         <legend>Basic Information</legend>
-        <div class="form-group" ng-class="{'has-error' : employeeForm.fullName.$invalid}">
+        <div class="form-group" ng-class="{'has-error' : employeeForm.fullName.$invalid && employeeForm.fullName.$dirty}">
             <label for="fullName" class="col-sm-3 control-label">Name</label>
             <div class="col-sm-9">
                 <input type="text" id="fullName" name="fullName" class="form-control"
