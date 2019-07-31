@@ -3,7 +3,7 @@
 // modified from Paul Yoder's blog:  blog.yodersolutions.com
 //
 
-angularFormsApp.directive('showErrors', function () {
+angularFormsApp.directive('showErrors', function ($timeout) {
 
     return {
         restrict: 'A',
@@ -31,6 +31,13 @@ angularFormsApp.directive('showErrors', function () {
             scope.$on('show-errors-event',
                 function () {
                     el.toggleClass('has-error', formCtrl[inputName].$invalid);
+                });
+
+            scope.$on('hide-errors-event',
+                function () {
+                    $timeout(function () {
+                        el.removeClass('has-error');
+                    }, 0, false);
                 });
         }
     }

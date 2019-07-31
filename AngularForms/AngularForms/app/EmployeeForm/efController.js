@@ -65,4 +65,8 @@ angularFormsApp.controller('efController',
             $window.history.back();
         };
 
+        $scope.resetForm = function () {
+            $scope.$broadcast('hide-errors-event');
+        };
+
     });
