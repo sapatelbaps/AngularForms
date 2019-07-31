@@ -1,0 +1,22 @@
+﻿
+/* 
+    if the field value is not changed then angular will set border accordingly
+input.ng-pristine {
+    background-color: green;
+}
+
+/* if the field value is changed then angular will set border accordingly
+input.ng-dirty {
+    background-color: red;
+}
+
+/* if the field value is valid then angular will set border accordingly
+input.ng-valid {
+    border: 3px solid darkred;
+}
+
+/* if the field value is invalid then angular will set border accordingly
+input.ng-invalid {
+    border: 3px solid black;
+}
+*/
