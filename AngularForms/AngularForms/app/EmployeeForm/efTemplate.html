@@ -179,7 +179,7 @@
         <input type="button" class="btn btn-default" value="Cancel"
                ng-click="cancelForm()" />
         <input type="submit" class="btn btn-primary" value="Submit"
-               ng-click="submitForm()" />
+               ng-click="submitForm()" ng-disabled="employeeForm.$invalid" />
     </div>
 
 </form>
