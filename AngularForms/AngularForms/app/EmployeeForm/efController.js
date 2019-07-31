@@ -36,6 +36,10 @@ angularFormsApp.controller('efController',
             $scope.percent = 100 * (value / 10);
         }
 
+        $scope.shouldShowFullName = function () {
+            return true;
+        }
+
         $scope.submitForm = function () {
 
             if ($scope.editableEmployee.id == 0) {
