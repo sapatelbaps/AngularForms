@@ -1,4 +1,4 @@
-﻿<form class="form-horizontal" role="form">
+﻿<form class="form-horizontal" role="form" name="employeeForm" novalidate>
 
     <fieldset>
         <legend>Basic Information</legend>
@@ -6,7 +6,8 @@
             <label for="fullName" class="col-sm-3 control-label">Name</label>
             <div class="col-sm-9">
                 <input type="text" id="fullName" name="fullName" class="form-control"
-                       ng-model="editableEmployee.fullName" />
+                       ng-model="editableEmployee.fullName" required />
+                <span ng-show="employeeForm.fullName.$error.required">Full Name is required</span>
             </div>
         </div>
 
