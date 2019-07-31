@@ -7,7 +7,7 @@
             <div class="col-sm-9">
                 <input type="text" id="fullName" name="fullName" class="form-control"
                        ng-model="editableEmployee.fullName" ng-required="shouldShowFullName()" />
-                <span ng-show="employeeForm.fullName.$error.required">Full Name is required</span>
+                <span class="help-block" ng-show="employeeForm.fullName.$error.required">Full Name is required</span>
             </div>
         </div>
 
