@@ -2,12 +2,14 @@
 
     <fieldset>
         <legend>Basic Information</legend>
-        <div class="form-group" ng-class="{'has-error' : employeeForm.fullName.$invalid && employeeForm.fullName.$dirty}">
+        <div class="form-group" show-errors>
             <label for="fullName" class="col-sm-3 control-label">Name</label>
             <div class="col-sm-9">
                 <input type="text" id="fullName" name="fullName" class="form-control"
-                       ng-model="editableEmployee.fullName" ng-required="shouldShowFullName()" />
-                <span class="help-block" ng-show="employeeForm.fullName.$error.required">Full Name is required</span>
+                       ng-model="editableEmployee.fullName" ng-required="true" ng-minlength="3" ng-maxlength="6" ng-pattern="/^A/" />
+                <span class="help-block hide">Full Name is required</span>
+                <span class="help-block hide">Full Name is required</span>
+
             </div>
         </div>
 
@@ -17,6 +19,15 @@
                 <input type="email" id="email" name="email" class="form-control"
                        ng-model="editableEmployee.email" ng-required="true" />
                 <span class="help-block hide">Valid email is required</span>
+            </div>
+        </div>
+
+        <div class="form-group" show-errors>
+            <label for="url" class="col-sm-3 control-label">Profile URL</label>
+            <div class="col-sm-9">
+                <input type="url" id="url" name="url" class="form-control"
+                       ng-model="editableEmployee.url" ng-required="true" />
+                <span class="help-block hide">Valid profile URL is required</span>
             </div>
         </div>
 
