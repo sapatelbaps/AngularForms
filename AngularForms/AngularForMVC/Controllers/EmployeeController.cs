@@ -29,6 +29,9 @@ namespace AngularForMVC.Controllers
             };
 
             return jsonResult;
+
+            // Throw an error to angular client.
+            // return new HttpStatusCodeResult(404, "Custom error message...");
         }
     }
 }
