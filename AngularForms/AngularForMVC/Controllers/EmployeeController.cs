@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Net;
 using System.Web.Mvc;
 using AngularForMVC.Models;
 using Newtonsoft.Json;
@@ -39,7 +41,17 @@ namespace AngularForMVC.Controllers
                 return new HttpStatusCodeResult(201, "New employee added.");
             }
 
-            return new HttpStatusCodeResult(400);
+            // Server side validation code below before creating any new entity.
+            List<string> errors = new List<string>();
+            errors.Add("Insert failed.");
+
+            if (!ModelState.IsValidField("Notes"))
+            {
+                errors.Add("Notes must be at least five characters long.");
+            }
+
+            var s = string.Join("\n", errors);
+            return new HttpStatusCodeResult(HttpStatusCode.InternalServerError, String.Join(" ", errors));
         }
     }
 }

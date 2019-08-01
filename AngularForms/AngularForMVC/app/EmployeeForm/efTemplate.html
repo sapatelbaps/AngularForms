@@ -52,6 +52,7 @@
                ng-click="submitForm()" />
         <input type="reset" class="btn btn-warning" value="Reset"
                ng-click="resetForm()" />
+        <div class="alert alert-danger" ng-If="hasFormError">{{formErrors}}</div>
     </div>
 
 </form>
