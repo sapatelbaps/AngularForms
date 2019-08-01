@@ -3,7 +3,8 @@ angularFormsApp.factory('DataService',
     ["$http", function ($http) {
 
         var getEmployees = function () {
-            return $http.get("Employee/GetEmployees");
+            // updated the promise to make a call to web api instead of MVC controller. Check the history of the file.
+            return $http.get("api/EmployeeWebApi/Get");
         }
 
         var getEmployee = function (id) {
@@ -26,7 +27,7 @@ angularFormsApp.factory('DataService',
         };
 
         var insertEmployee = function (newEmployee) {
-            return $http.post("Employee/Create", newEmployee);
+            return $http.post("api/EmployeeWebApi/Post", newEmployee);
         };
 
         var updateEmployee = function (employee) {

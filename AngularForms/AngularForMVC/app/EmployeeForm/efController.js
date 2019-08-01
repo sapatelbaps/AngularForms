@@ -55,6 +55,8 @@ angularFormsApp.controller('efController',
                     function (results) {
                         // success
                         $scope.employee = angular.copy($scope.editableEmployee);
+                        // updated because from MVC web api controller we are returning only id in the JSON object now.
+                        $scope.employee.id = results.data;
                         $window.history.back();
                     },
                     function (results) {

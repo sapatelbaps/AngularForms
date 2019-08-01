@@ -1,6 +1,11 @@
-﻿using System.Web.Mvc;
+﻿using System.Linq;
+using System.Net.Http.Formatting;
+using System.Web.Http;
+using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using AngularForMVC.App_Start;
+using Newtonsoft.Json.Serialization;
 
 namespace AngularForMVC
 {
@@ -10,8 +15,13 @@ namespace AngularForMVC
         {
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
+            WebApiConfig.Register(GlobalConfiguration.Configuration);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            var jsonFormatter = GlobalConfiguration.Configuration.Formatters.OfType<JsonMediaTypeFormatter>().First();
+            jsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+
         }
     }
 }
