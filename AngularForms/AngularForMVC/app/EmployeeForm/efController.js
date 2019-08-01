@@ -1,5 +1,6 @@
 ﻿
 angularFormsApp.controller('efController',
+    ["$scope", "$window", "$routeParams", "DataService",
     function efController($scope, $window, $routeParams, DataService) {
 
         if ($routeParams.id)
@@ -69,4 +70,4 @@ angularFormsApp.controller('efController',
             $scope.$broadcast('hide-errors-event');
         };
 
-    });
+    }]);

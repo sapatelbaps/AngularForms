@@ -38,6 +38,9 @@ namespace AngularForMVC
                 "~/app/EmployeeForm/efController.js",
                 "~/app/EmployeeForm/efDirective.js",
                 "~/app/ValidationDirective.js"));
+
+            // Enable minifaction of scripts and CSS
+            BundleTable.EnableOptimizations = true;
         }
     }
 }
