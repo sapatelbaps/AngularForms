@@ -33,5 +33,10 @@ namespace AngularForMVC.Controllers
             // Throw an error to angular client.
             // return new HttpStatusCodeResult(404, "Custom error message...");
         }
+
+        public ActionResult Create(EmployeeVM employee)
+        {
+            return new HttpStatusCodeResult(201, "New employee added.");
+        }
     }
 }

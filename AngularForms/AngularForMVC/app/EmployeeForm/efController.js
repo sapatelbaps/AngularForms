@@ -51,15 +51,22 @@ angularFormsApp.controller('efController',
 
             if ($scope.editableEmployee.id == 0) {
                 // insert new employee
-                DataService.insertEmployee($scope.editableEmployee);
+                DataService.insertEmployee($scope.editableEmployee).then(
+                    function (results) {
+                        // success
+                        $scope.employee = angular.copy($scope.editableEmployee);
+                        $window.history.back();
+                    },
+                    function (results) {
+                        // error
+                        alert(results);
+                    });
             }
             else {
                 // update the employee
                 DataService.updateEmployee($scope.editableEmployee);
             }
 
-            $scope.employee = angular.copy($scope.editableEmployee);
-            $window.history.back();
         };
 
         $scope.cancelForm = function () {
