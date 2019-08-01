@@ -28,9 +28,9 @@ namespace AngularForMVC
                       "~/Content/site.css"));
 
             bundles.Add(new StyleBundle("~/bundles/mini-spa/style").Include("~/Content/app.css",
-                "~/Content/site.css"));
+                "~/Content/bootstrap.css"));
 
-            bundles.Add(new StyleBundle("~/bundles/mini-spa/script").Include("~/Scripts/angular.js",
+            bundles.Add(new ScriptBundle("~/bundles/mini-spa/script").Include("~/Scripts/angular.js",
                 "~/Scripts/angular-route.js",
                 "~/Scripts/angular-ui/ui-bootstrap-tpls.js",
                 "~/app/AngularFormsApp.js",

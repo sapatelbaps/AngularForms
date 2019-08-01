@@ -1,0 +1,57 @@
+﻿<form class="form-horizontal" role="form" name="employeeForm" novalidate>
+
+    <fieldset>
+        <legend>Basic Information</legend>
+        <div class="form-group" show-errors>
+            <label for="fullName" class="col-sm-3 control-label">Name</label>
+            <div class="col-sm-9">
+                <input type="text" id="fullName" name="fullName" class="form-control"
+                       ng-model="editableEmployee.fullName" ng-required="true" ng-minlength="3" ng-maxlength="6" ng-pattern="/^A/" />
+                <span class="help-block"
+                      ng-if="employeeForm.fullName.$error.required">Full Name is required</span>
+                <span class="help-block"
+                      ng-if="employeeForm.fullName.$error.pattern">Full Name must start with 'A'</span>
+
+            </div>
+        </div>
+
+        <div class="form-group" show-errors>
+            <label for="email" class="col-sm-3 control-label">Email</label>
+            <div class="col-sm-9">
+                <input type="email" id="email" name="email" class="form-control"
+                       ng-model="editableEmployee.email" ng-required="true" />
+                <span class="help-block"
+                      ng-if="employeeForm.email.$error">Valid email is required</span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="notes" class="col-sm-3 control-label">Notes</label>
+            <div class="col-sm-9">
+                <textarea name="notes" id="notes" class="form-control" rows="5" cols="40"
+                          ng-model="editableEmployee.notes"></textarea>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="department" class="col-sm-3 control-label">Department</label>
+            <div class="col-sm-9">
+                <select name="department" id="department" class="form-control"
+                        ng-model="editableEmployee.department"
+                        ng-options="dept for dept in departments"></select>
+            </div>
+        </div>
+
+    </fieldset>
+    <br />
+
+    <div class="col-sm-offset-3 col-sm-9">
+        <input type="button" class="btn btn-default" value="Cancel"
+               ng-click="cancelForm()" />
+        <input type="submit" class="btn btn-primary" value="Submit"
+               ng-click="submitForm()" />
+        <input type="reset" class="btn btn-warning" value="Reset"
+               ng-click="resetForm()" />
+    </div>
+
+</form>
