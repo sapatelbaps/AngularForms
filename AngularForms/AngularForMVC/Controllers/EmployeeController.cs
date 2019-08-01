@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 using System.Web.Mvc;
 using AngularForMVC.Models;
 using Newtonsoft.Json;
@@ -36,7 +33,13 @@ namespace AngularForMVC.Controllers
 
         public ActionResult Create(EmployeeVM employee)
         {
-            return new HttpStatusCodeResult(201, "New employee added.");
+            // MVC will validate the model and set the flag automatically.
+            if (ModelState.IsValid)
+            {
+                return new HttpStatusCodeResult(201, "New employee added.");
+            }
+
+            return new HttpStatusCodeResult(400);
         }
     }
 }
