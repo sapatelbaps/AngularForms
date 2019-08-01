@@ -25,6 +25,11 @@ angularFormsApp.controller("HomeController",
     ["$scope", "$location", "DataService",
     function ($scope, $location, DataService) {
 
+        // promise().then(successfun,errorfunc[optional]);
+        DataService.getEmployees().then(function (result) {
+            var data = result.data;
+        });
+
         $scope.showCreateEmployeeForm = function () {
             $location.path('/newEmployeeForm');
         };
