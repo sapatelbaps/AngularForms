@@ -35,7 +35,7 @@ angularFormsApp.controller("HomeController",
         };
 
         $scope.showUpdateEmployeeForm = function (id) {
-            $location.path('/updateEmployeeForm/' + id)
+            $location.path('/updateEmployeeForm/' + id);
         };
 
     }]);

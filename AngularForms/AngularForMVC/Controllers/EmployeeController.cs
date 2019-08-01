@@ -53,5 +53,27 @@ namespace AngularForMVC.Controllers
             var s = string.Join("\n", errors);
             return new HttpStatusCodeResult(HttpStatusCode.InternalServerError, String.Join(" ", errors));
         }
+
+
+        public ActionResult Update(EmployeeVM employee)
+        {
+            // MVC will validate the model and set the flag automatically.
+            if (ModelState.IsValid)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.OK, "Record updated successfully.");
+            }
+
+            // Server side validation code below before creating any new entity.
+            List<string> errors = new List<string>();
+            errors.Add("Update failed.");
+
+            if (!ModelState.IsValidField("Notes"))
+            {
+                errors.Add("Notes must be at least five characters long.");
+            }
+
+            var s = string.Join("\n", errors);
+            return new HttpStatusCodeResult(HttpStatusCode.InternalServerError, String.Join(" ", errors));
+        }
     }
 }

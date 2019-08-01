@@ -65,7 +65,17 @@ angularFormsApp.controller('efController',
             }
             else {
                 // update the employee
-                DataService.updateEmployee($scope.editableEmployee);
+                DataService.updateEmployee($scope.editableEmployee).then(
+                    function (results) {
+                        // success
+                        $scope.employee = angular.copy($scope.editableEmployee);
+                        $window.history.back();
+                    },
+                    function (results) {
+                        // error
+                        $scope.hasFormError = true;
+                        $scope.formErrors = results.statusText;
+                    });
             }
 
         };

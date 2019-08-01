@@ -12,7 +12,7 @@ angularFormsApp.factory('DataService',
                     id: 123,
                     dateHired: "07 July 2019",
                     breakTime: "07 July 2019 3:00 PM",
-                    fullName: "Milton Waddams",
+                    fullName: "Aham Brahmasmi",
                     notes: "The ideal employee. Just don't touch his red stapler.",
                     department: "Administration",
                     url: "https://www.linkedin.com/in/sandip-patel-30108826/",
@@ -30,7 +30,7 @@ angularFormsApp.factory('DataService',
         };
 
         var updateEmployee = function (employee) {
-            return true;
+            return $http.post("Employee/Update", employee);
         };
 
         return {
