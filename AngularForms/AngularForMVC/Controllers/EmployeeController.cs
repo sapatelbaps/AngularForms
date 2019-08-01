@@ -33,7 +33,7 @@ namespace AngularForMVC.Controllers
             // return new HttpStatusCodeResult(404, "Custom error message...");
         }
 
-        public ActionResult Create(EmployeeVM employee)
+        public ActionResult Create([Bind(Exclude = "Notes")]EmployeeVM employee)
         {
             // MVC will validate the model and set the flag automatically.
             if (ModelState.IsValid)
